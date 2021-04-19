@@ -12,8 +12,9 @@ class Entrada extends Model
 
     protected $table = "entradas";
     public $timestamps = false;
+    protected $fillable = ['entrada_id','empleado_id','hora_entrada'];
 
     public function empleado(): BelongsTo{
-        return $this->belongsTo(Empleado::class, 'empleado_id');
+        return $this->belongsTo(Empleado::class,'empleado_id');
     }
 }

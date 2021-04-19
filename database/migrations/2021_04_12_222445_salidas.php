@@ -14,8 +14,9 @@ class Salidas extends Migration
     public function up()
     {
         Schema::create('salidas', function(Blueprint $table){
-            $table->id('id_salida');
-            $table->integer('id_empleado');
+            $table->id('id');
+            $table->unsignedInteger('empleado_id');
+            $table->foreign('empleado_id')->references('id')->on('empleados');
             $table->timestamp('hora_salida');
         });
     }

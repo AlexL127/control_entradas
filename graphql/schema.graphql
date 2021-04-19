@@ -5,10 +5,12 @@ scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
 scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
 
 type Query {
-    entradas: [Entrada!]! @paginate(defaultCount: 10)
-    entrada(entrada_id: Int @eq): Entrada @find
-    empleados: [Empleado!]! @paginate(defaultCount: 10)
-    empleado(empleado_id: Int @eq): Empleado @find
+    empleados: [Empleado!]! @all
+    empleado(id: Int @eq): Empleado @find
+    entradas: [Entrada!]! @all
+    entrada(id: Int @eq): Entrada @find
+    salidas: [Salida!]! @all
+    salida(id: Int @eq): Salida @find
 }
 
 type User {
@@ -20,19 +22,27 @@ type User {
 }
 
 type Empleado {
-    empleado_id: Int!
-    nombre: String!
-    apellido_pa: String!
-    apellido_ma: String!
-    telefono: String!
-    departamento: String!
-    turno: Int!
+    id: ID
+    nombre: String
+    apellido_pa: String
+    apellido_ma: String
+    telefono: String
+    departamento: String
+    turno: Int
     entradas: [Entrada] @hasMany
+    salidas: [Salida] @hasMany
 }
 
 type Entrada{
-    entrada_id: Int!
-    empleado_id: Int!
-    hora_entrada: DateTime!
-    empleado: Empleado! @belongsTo
+    id: ID
+    empleado_id: ID
+    hora_entrada: DateTime
+    empleado: Empleado @belongsTo 
+}
+
+type Salida{
+    id: ID
+    empleado_id: ID
+    hora_salida: DateTime
+    empleado: Empleado @belongsTo 
 }

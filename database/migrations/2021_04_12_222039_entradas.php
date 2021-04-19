@@ -14,8 +14,9 @@ class Entradas extends Migration
     public function up()
     {
         Schema::create('entradas', function(Blueprint $table){
-            $table->id('id_entrada');
-            $table->integer('id_empleado');
+            $table->increments('id');
+            $table->unsignedInteger('empleado_id');
+            $table->foreign('empleado_id')->references('id')->on('empleados');
             $table->timestamp('hora_entrada');
         });
     }

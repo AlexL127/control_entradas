@@ -12,10 +12,10 @@ class Empleado extends Model
 
     protected $table = "empleados";
     public $timestamps = false;
-    protected $fillable = ['nombre','apellido_pa','apellido_ma','departamento','telefono','turno'];
+    protected $fillable = ['empleado_id','nombre','apellido_pa','apellido_ma','departamento','telefono','turno'];
     
     public function entradas(): HasMany{
-        return $this->hasMany(Entrada::class, 'empleado_id');
+        return $this->hasMany(Entrada::class,'empleado_id');
     }
 
     public function salidas(): HasMany{
