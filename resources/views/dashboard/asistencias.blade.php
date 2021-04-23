@@ -1,7 +1,7 @@
 @extends('adminlte::page')
-@section('title', 'Lista de salidas')
+@section('title', 'Asistencias')
 @section('content_header')
-    <h1>Lista de salidas</h1>
+    <h1>Asistencias</h1>
 @stop
 
 @section('content')
@@ -60,7 +60,7 @@
             label: 'Asistencias',
             backgroundColor: 'rgb(2, 99, 132)',
             borderColor: 'rgb(2, 99, 132)',
-            data: [32, 10, 5, 2, 20, 15, 25],
+            data: [100, 99, 85, 100, 97, 99, 97, 92, 95, 100, 99, 98],
         }]
         };
         const config = {

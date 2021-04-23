@@ -10,3 +10,5 @@ Route::get('dashboard/empleados',[DashboardController::class, 'empleados']);
 Route::get('dashboard/entradas',[DashboardController::class, 'registro_entrada']);
 
 Route::get('dashboard/salidas',[DashboardController::class, 'registro_salida']);
+
+Route::get('dashboard/asistencias',[DashboardController::class, 'registro_asistencias']);

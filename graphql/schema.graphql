@@ -7,10 +7,15 @@ scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date
 type Query {
     empleados: [Empleado!]! @all
     empleado(id: Int @eq): Empleado @find
+
     entradas: [Entrada!]! @all
     entrada(id: Int @eq): Entrada @find
+    
     salidas: [Salida!]! @all
     salida(id: Int @eq): Salida @find
+
+    fechas_entradas(empleado_id: Int): [Entrada]
+    fechas_salidas(empleado_id: Int): [Salida]
 }
 
 type User {

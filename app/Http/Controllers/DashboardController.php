@@ -21,4 +21,7 @@ class DashboardController extends Controller
     public function registro_salida(){
         return view('dashboard.re_salidas');
     }
+    public function registro_asistencias(){
+        return view('dashboard.asistencias');
+    }
 }
